@@ -72,7 +72,7 @@ const Dropdown = ({ onChange, title }) => {
         },
         {
             label: 'Japanese yen',
-            value: 'JYP'
+            value: 'JPY'
         },
         {
             label: 'Mexican peso',

@@ -5,7 +5,6 @@ import axios from 'axios';
 import TextInput from '../TextInput/TextInput';
 import Dropdown from '../Dropdown/Dropdown';
 
-
 class App extends React.Component {
     state = {
         amount: null,
@@ -17,18 +16,9 @@ class App extends React.Component {
 
     // Request exchange rate with axios
     getCurrencyExchange = async () => {
-        const { data } = await axios.get(
-            `https://api.exchangeratesapi.io/latest?base=${this.state.from}`
-        );
-        console.log(data)
+        const { data } = await axios.post(`http://localhost:3001/exchangerate/${this.state.from}/${this.state.to}`);
         
-        const dataEntries = Object.entries(data.rates);
-
-        dataEntries.map((dataEntry) => {
-            return dataEntry[0] === this.state.to
-                ? this.setState({ exchangeRate: dataEntry[1] })
-                : null;
-        });
+        await this.setState({ exchangeRate: data });
     };
 
     // Returns result
