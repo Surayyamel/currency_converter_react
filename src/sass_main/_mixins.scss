@@ -1,0 +1,19 @@
+@mixin under-title-style {
+    font-size: 2.5rem;
+    font-weight: 500;
+    padding-bottom: .7rem;
+}
+
+@mixin input-styles {
+    padding: 1rem;
+    font-family: inherit;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 5px;
+
+    &:focus,
+    &:active {
+        outline: none;
+        box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
+    }
+}

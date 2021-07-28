@@ -1,0 +1,11 @@
+@import '../../sass_main/_variables.scss';
+@import '../../sass_main/_mixins.scss';
+
+.under-title-2 {
+    @include under-title-style;   
+}
+
+.input-2 {
+    @include input-styles;
+    width: 93%;
+}

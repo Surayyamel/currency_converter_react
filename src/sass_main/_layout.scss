@@ -1,0 +1,26 @@
+@import "./variables";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; // 10px
+}
+
+body {
+    box-sizing: border-box;
+    padding: 5rem 8rem;
+    font-family: sans-serif;
+}
+
+.container {
+    background-image: linear-gradient(to right bottom, rgba(68, 127, 236,.4), rgb(3, 219, 252));
+ 
+    display: flex;
+    flex-direction: column;
+    align-items: center; // So child isn't stretched
+    padding: 5rem;
+}

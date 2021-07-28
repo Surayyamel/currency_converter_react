@@ -1,0 +1,14 @@
+@import '../../sass_main/_variables.scss';
+@import '../../sass_main/_mixins.scss';
+
+.dropdown-container {
+    margin-top: 2.5rem;
+}
+
+.under-title {
+    @include under-title-style;
+}
+
+.input {
+    @include input-styles;
+}
