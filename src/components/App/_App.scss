@@ -1,16 +1,28 @@
 @import '../../sass_main/variables';
 
+
 .title {
     font-size: 6rem;
     font-weight: 400;
     margin-bottom: 3rem;
+    font-family: 'Prompt', sans-serif;
+
+    @media screen and (max-width: $small) {
+        font-size: 2rem;
+    }
 }
 
-.container__main { 
-    background-image: linear-gradient(to bottom right, rgb(3, 219, 252), rgb(68, 127, 236));
-    padding: 4rem;
-    border-radius: 10px;
-    box-shadow: 0 3rem 5rem rgba(0,0,0,.2);
+.container {
+    @media screen and (max-width: $small) {
+        padding: 2rem 0;
+    }
+    &__main {
+        background-image: linear-gradient(to bottom right, rgb(3, 219, 252), rgb(68, 127, 236));
+        padding: 4rem;
+        height: 50rem;
+        border-radius: 10px;
+        box-shadow: 0 3rem 5rem rgba(0,0,0,.2);
+    }
 }
 
 .button-go-container {
@@ -26,6 +38,7 @@
     border: none;
     background-image: linear-gradient(to bottom right, rgb(104, 218, 246), rgb(58, 176, 255));
     box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
+    cursor: pointer;
 
     &:hover {
         transform: translateY(-.3rem);
@@ -44,8 +57,21 @@
 }
 
 .result-container {
-    margin-top: 4rem;
+    margin-top: 2rem;
     font-size: 3rem;
     display: flex;
     justify-content: center;
+  
+}
+
+.result {
+    font-family: 'Orbitron', sans-serif;
+}
+
+.error {
+    height: 1rem;
+    text-align: center;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: lavender
 }

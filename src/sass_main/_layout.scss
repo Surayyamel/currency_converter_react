@@ -12,15 +12,23 @@ html {
 
 body {
     box-sizing: border-box;
-    padding: 5rem 8rem;
+    padding: 3rem 3rem;
     font-family: sans-serif;
+
+    @media screen and (max-width: $small) {
+       padding: 0
+    }
 }
 
 .container {
     background-image: linear-gradient(to right bottom, rgba(68, 127, 236,.4), rgb(3, 219, 252));
- 
+    height: 95vh;
     display: flex;
     flex-direction: column;
     align-items: center; // So child isn't stretched
     padding: 5rem;
+
+    @media screen and (max-width: $small) {
+        height: 100%;
+     }
 }

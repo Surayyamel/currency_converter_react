@@ -19,6 +19,7 @@ const TextInput = ({ title, type, sendValue }) => {
             <input
                 type={type}
                 value={term}
+                min={0}
                 onChange={(event) => onInputChange(event)}
                 className="input-2"
             />

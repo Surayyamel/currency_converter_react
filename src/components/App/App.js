@@ -12,12 +12,15 @@ class App extends React.Component {
         to: '',
         result: null,
         exchangeRate: null,
+        error: ''
     };
 
     // Request exchange rate with axios
     getCurrencyExchange = async () => {
-        const { data } = await axios.post(`http://localhost:3001/exchangerate/${this.state.from}/${this.state.to}`);
-        
+        const { data } = await axios.post(
+            `http://localhost:3001/exchangerate/${this.state.from}/${this.state.to}`
+        );
+
         await this.setState({ exchangeRate: data });
     };
 
@@ -38,9 +41,19 @@ class App extends React.Component {
     onFormSubmit = async (event) => {
         event.preventDefault();
 
-        // wait for setState to get the correct result state value
-        await this.getCurrencyExchange();
-        await this.calculateCurrency();
+        if (
+            this.state.from === '' ||
+            this.state.to === '' ||
+            this.state.amount === null
+            
+        ) {
+            this.setState({ error: 'Please fill all fields' })
+        } else {
+            // wait for setState to get the correct result state value
+            await this.getCurrencyExchange();
+            await this.calculateCurrency();
+            this.setState({ error: '' })
+        }
     };
 
     // Grab Amount from TextInput
@@ -89,6 +102,7 @@ class App extends React.Component {
                                     id="submit-button"
                                 ></input>
                             </div>
+                            <p className="error">{this.state.error}</p>
                         </form>
 
                         <div className="result-container">
