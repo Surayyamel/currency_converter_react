@@ -17,7 +17,7 @@ class App extends React.Component {
 
     // Request exchange rate with axios
     getCurrencyExchange = async () => {
-        const { data } = await axios.post(
+        const { data } = await axios.get(
             `${process.env.REACT_APP_URL}/exchangerate/${this.state.from}/${this.state.to}`
         );
 
