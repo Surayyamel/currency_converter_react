@@ -5,6 +5,8 @@ import axios from 'axios';
 import TextInput from '../TextInput/TextInput';
 import Dropdown from '../Dropdown/Dropdown';
 
+const origin = process.env.NODE_ENV === 'development' ? 'http://localhost:3001' : 'https://sf-currency-converter-server.herokuapp.com/';
+
 class App extends React.Component {
     state = {
         amount: null,
@@ -18,7 +20,7 @@ class App extends React.Component {
     // Request exchange rate with axios
     getCurrencyExchange = async () => {
         const { data } = await axios.post(
-            `http://localhost:3001/exchangerate/${this.state.from}/${this.state.to}`
+            `${origin}/exchangerate/${this.state.from}/${this.state.to}`
         );
 
         await this.setState({ exchangeRate: data });
