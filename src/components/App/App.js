@@ -18,7 +18,7 @@ class App extends React.Component {
     // Request exchange rate with axios
     getCurrencyExchange = async () => {
         const { data } = await axios.get(
-            `${process.env.REACT_APP_URL}/exchangerate/${this.state.from}/${this.state.to}`
+            `https://sf-currency-converter-server.herokuapp.com/exchangerate/${this.state.from}/${this.state.to}`
         );
 
         await this.setState({ exchangeRate: data });
